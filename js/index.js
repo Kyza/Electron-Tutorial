@@ -16,12 +16,20 @@ $("#nodejs-install").on("click", () => {
   opn("https://nodejs.org/en/download/");
 });
 
-$("#docs-button").on("click", () => {
+$("#titlebar-docs-button").on("click", () => {
   dialog.showMessageBox(remote.getCurrentWindow(), {
 		"title": "Please Wait",
     "message": "Your browser will open with the documentation page for Electron."
   });
   opn("https://electronjs.org/docs/api/browser-window?q=titlebar#browserwindow");
+});
+
+$("#buttons-stackoverflow-button").on("click", () => {
+  dialog.showMessageBox(remote.getCurrentWindow(), {
+		"title": "Please Wait",
+    "message": "Your browser will open with the article."
+  });
+  opn("https://stackoverflow.com/questions/35876939/frameless-window-with-controls-in-electron-windows");
 });
 
 if (platform == "win32") {
