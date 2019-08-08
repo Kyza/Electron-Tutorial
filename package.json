@@ -1,0 +1,24 @@
+{
+  "name": "electron-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "electron": "^6.0.0",
+    "opn": "^6.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KyzaGitHub/Electron-Tutorial.git"
+  },
+  "author": "Tyler Cahill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KyzaGitHub/Electron-Tutorial/issues"
+  },
+  "homepage": "https://github.com/KyzaGitHub/Electron-Tutorial#readme"
+}

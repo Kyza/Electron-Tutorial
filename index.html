@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Electron Tutorial</title>
+
+	<script>
+		if (typeof module === 'object') {
+			window.module = module;
+			module = undefined;
+		}
+	</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+	<script>
+		if (window.module) module = window.module;
+	</script>
+</head>
+
+<body>
+	<div class="jumbotron main-jumbotron">
+		<h1 class="display-1">Electron Tutorial</h1>
+
+		<p class="lead">Learn how to use documentation and build your own cross-platform app.</p>
+
+	</div>
+
+	<hr class="my-4">
+
+	<div class="card-group">
+		<div class="card">
+			<div class="card-header">
+				<h1 class="display-3">Step 1</h1>
+				<br>
+				<h1 class="display-5">Installation</h1>
+			</div>
+			<div class="card-body">
+				<h3 class="card-title">Installing Node.js</h3>
+
+				<p class="card-text">
+					<input id="nodejs-install" class="btn btn-primary" type="button" value="Install Node.js" />
+					<p>
+						Node.js is the framework for everything you do with Electron.
+					</p>
+					<p class="text-primary">
+						"As an asynchronous event driven JavaScript runtime, Node is designed to build scalable network applications... ...many connections can be handled concurrently. Upon each connection the callback is fired, but
+						if there is no work to be done, Node will sleep."
+					</p>
+					<p>
+						A package manager called NPM is installed along with Node.js, it is also required for this project.
+					</p>
+					<p>
+						Once you have installed the latest version of Node.js, proceed to installing Electron.
+					</p>
+				</p>
+
+				<h3 class="card-title">Installing Electron</h3>
+
+				<p class="card-text">
+					<p>
+						Electron is what allows you to make the app window (or multiple windows).
+					</p>
+					<p class="text-primary">
+						"Electron uses Chromium and Node.js so you can build your app with HTML, CSS, and JavaScript."
+					</p>
+					<p>
+						Using NPM, install Electron the following way.
+					</p>
+					<p>
+						You are on <span class="windows">Windows</span><span class="mac">macOS</span><span class="linux">a Linux based system</span>, so you will open a <span class="windows">command prompt</span><span class="mac">terminal</span><span class="linux">terminal</span> and navigate to wherever you want to start your project like this.
+					</p>
+					<p>
+						<kbd class="bg-dark text-white">cd path_to_folder</kbd>
+					</p>
+					<p>
+						Then, use this command to install Electron.
+					</p>
+					<p>
+						<kbd class="bg-dark text-white">npm install electron --save-dev</kbd>
+					</p>
+					<p>
+						This command utilizes the NPM package manager to install Electron in the currect directory.
+					</p>
+					<p>
+						Next, run this command.
+					</p>
+					<p>
+						<kbd class="bg-dark text-white">npm init</kbd>
+					</p>
+					<p>
+						This will initialize your project's settings.
+					</p>
+					<p>
+						You don't need to change anything, you can press enter and accept all the default values.
+					</p>
+					<p>
+						Now, open the file it created called <span class="text-primary">package.json</span>.
+					</p>
+					<p>
+						You can remove this line...
+					</p>
+					<p>
+						<kbd class="bg-dark text-white">"test": "echo \"Error: no test specified\" && exit 1"</kbd>
+					</p>
+					<p>
+						... and replace it with this...
+					</p>
+					<p>
+						<kbd class="bg-dark text-white">"start": "electron ."</kbd>
+					</p>
+					<p>
+						You just changed one of your project's settings.
+					</p>
+					<p>
+						You will get to run it soon enough, but first you have to tell the program what to do.
+					</p>
+					<p>
+						Create a new file in the same folder you were running the commands called <span class="text-primary">index.js</span>.
+					</p>
+					<p>
+						This is the file that will start your whole app.
+					</p>
+					<p>
+						Now open it up and paste this code inside.
+					</p>
+					<p>
+						<pre class="bg-dark text-white">const { app, BrowserWindow } = require('electron');
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let win;
+
+function createWindow () {
+	// Create the browser window.
+	win = new BrowserWindow({
+		width: 800,
+		height: 600,
+		webPreferences: {
+			nodeIntegration: true
+		}
+	});
+
+	// and load the index.html of the app.
+	win.loadFile('index.html');
+
+	// Open the DevTools.
+	win.webContents.openDevTools();
+
+	// Emitted when the window is closed.
+	win.on('closed', () => {
+		// Dereference the window object, usually you would store windows
+		// in an array if your app supports multi windows, this is the time
+		// when you should delete the corresponding element.
+		win = null;
+	});
+}
+
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on('ready', createWindow);
+
+// Quit when all windows are closed.
+app.on('window-all-closed', () => {
+	// On macOS it is common for applications and their menu bar
+	// to stay active until the user quits explicitly with Cmd + Q
+	if (process.platform !== 'darwin') {
+		app.quit();
+	}
+});
+
+app.on('activate', () => {
+	// On macOS it's common to re-create a window in the app when the
+	// dock icon is clicked and there are no other windows open.
+	if (win === null) {
+		createWindow();
+	}
+});
+
+// In this file you can include the rest of your app's specific main process
+// code. You can also put them in separate files and require them here.</pre>
+					</p>
+					<p>
+						Make sure you save the file. Now, back in your <span class="windows">command prompt</span><span class="mac">terminal</span><span class="linux">terminal</span></span></span>, run this command to start your project!
+					</p>
+					<p>
+						<kbd class="bg-dark text-white">npm run start</kbd>
+					</p>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="card-group">
+		<div class="card">
+			<div class="card-header">
+				<h1 class="display-3">Step 2</h1>
+				<br>
+				<h1 class="display-5"></h1>
+			</div>
+			<div class="card-body">
+				<h3 class="card-title">Documentation</h3>
+
+				<p class="card-text">
+					<p>
+						Now that you've finished setting up your project, here's the <i>real</i> challenge.
+					</p>
+					<p>
+						Using Electron's documentation, remove the window's <span class="text-primary">title</span> bar.
+					</p>
+					<input id="docs-button" class="btn btn-primary" type="button" value="Open Electron Docs" />
+					<p>
+						A package manager called <kbd class="bg-dark text-white">npm</kbd> is installed along with Node.js, it is also required for this project.
+					</p>
+					<p>
+						Once you have installed the latest version of Node.js, proceed to the next step.
+					</p>
+				</p>
+			</div>
+			<div class="card-footer">
+			</div>
+		</div>
+	</div>
+</body>
+
+<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/index.css">
+<!-- Only needed for editing the theme. <link rel="stylesheet" href="./css/_variables.scss"> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="./js/index.js"></script>
+
+</html>
