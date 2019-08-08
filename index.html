@@ -208,14 +208,27 @@ app.on('activate', () => {
 						Now that you've finished setting up your project, here's the <i>real</i> challenge.
 					</p>
 					<p>
-						Using Electron's documentation, remove the window's <span class="text-primary">title</span> bar.
+						Using Electron's documentation, remove the BrowserWindow's title bar, making it a <span class="text-primary">frameless window</span>.
 					</p>
 					<input id="docs-button" class="btn btn-primary" type="button" value="Open Electron Docs" />
+					<br><br>
 					<p>
-						A package manager called <kbd class="bg-dark text-white">npm</kbd> is installed along with Node.js, it is also required for this project.
+						Click the button above to open the Electron BrowserWindow documentation.
 					</p>
 					<p>
-						Once you have installed the latest version of Node.js, proceed to the next step.
+						Once you have done that, you can create your own custom titlebar and style it however you want.
+					</p>
+					<p>
+						Open up your HTML file, create a DIV that stretches all the way across the top of the window.
+					</p>
+					<p>
+						When you have done that and styled it however you want, add the extra CSS styles <span class="text-primary">-webkit-user-select: none;</span> and <span class="text-primary">-webkit-app-region: drag;</span>.
+					</p>
+					<p>
+						Now, if you run it once more you will be able to click and drag the DIV you added just like the built in window titlebar.
+					</p>
+					<p>
+
 					</p>
 				</p>
 			</div>
