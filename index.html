@@ -145,6 +145,9 @@ function createWindow () {
 	// and load the index.html of the app.
 	win.loadFile('index.html');
 
+	// Remove the windows menubar.
+	win.setMenu(null);
+
 	// Open the DevTools.
 	win.webContents.openDevTools();
 
@@ -247,7 +250,7 @@ app.on('activate', () => {
 						Now, if you run your project once more, you will be able to click and drag the DIV you added just like the built in window titlebar.
 					</p>
 					<p>
-						
+
 					</p>
 				</p>
 			</div>
