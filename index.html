@@ -183,7 +183,13 @@ app.on('activate', () => {
 // code. You can also put them in separate files and require them here.</pre>
 					</p>
 					<p>
-						Make sure you save the file. Now, back in your <span class="windows">command prompt</span><span class="mac">terminal</span><span class="linux">terminal</span></span></span>, run this command to start your project!
+						Make sure you save the file.
+					</p>
+					<p>
+						Next, create a file called <span class="text-primary">index.html</span> and leave it blank for now.
+					</p>
+					<p>
+						Now, back in your <span class="windows">command prompt</span><span class="mac">terminal</span><span class="linux">terminal</span></span></span>, run this command to start your project!
 					</p>
 					<p>
 						<kbd class="bg-dark text-white">npm run start</kbd>
@@ -198,10 +204,10 @@ app.on('activate', () => {
 			<div class="card-header">
 				<h1 class="display-3">Step 2</h1>
 				<br>
-				<h1 class="display-5"></h1>
+				<h1 class="display-5">Documentation</h1>
 			</div>
 			<div class="card-body">
-				<h3 class="card-title">Documentation</h3>
+				<h3 class="card-title">Building A Custom Titlebar</h3>
 
 				<p class="card-text">
 					<p>
@@ -216,19 +222,32 @@ app.on('activate', () => {
 						Click the button above to open the Electron BrowserWindow documentation.
 					</p>
 					<p>
-						Once you have done that, you can create your own custom titlebar and style it however you want.
+						In order to gather the information you need to remove the titlebar, you will have to read through the documentation and find the information you need.
 					</p>
 					<p>
-						Open up your HTML file, create a DIV that stretches all the way across the top of the window.
+						The documentation may even tell you more information about what you are trying to do.
+					</p>
+					<br>
+					<p>
+						Once you have done that, you can create your own custom titlebar and style it however you want using your knowledge of CSS.
 					</p>
 					<p>
-						When you have done that and styled it however you want, add the extra CSS styles <span class="text-primary">-webkit-user-select: none;</span> and <span class="text-primary">-webkit-app-region: drag;</span>.
+						Open up your <span class="text-primary">index.html</span> file and create a DIV that stretches all the way across the top of the window.
 					</p>
 					<p>
-						Now, if you run it once more you will be able to click and drag the DIV you added just like the built in window titlebar.
+						You can style this DIV however you want, just make sure it is visible.
 					</p>
 					<p>
-
+						When you have done that, add the extra CSS styles <span class="text-primary">-webkit-user-select: none;</span> and <span class="text-primary">-webkit-app-region: drag;</span> to the DIV.
+					</p>
+					<p>
+						These styles will prevent the user from selecting any text inside of that DIV and make the DIV a part of the titlebar respectively.
+					</p>
+					<p>
+						Now, if you run your project once more, you will be able to click and drag the DIV you added just like the built in window titlebar.
+					</p>
+					<p>
+						
 					</p>
 				</p>
 			</div>
