@@ -1,6 +1,6 @@
 # Electron Tutorial
 
-- [Internal Instructions](#internal-instructions)
+- [Internal Instructions](#internal-instructions) (For if you can't run the app.)
 - [How To Run The App](#how-to-run-the-app)
 
 ## Internal Instructions
