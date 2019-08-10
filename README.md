@@ -1,9 +1,9 @@
 # Electron Tutorial
 
-- [For Instructors](#for-instructors)
-- [For Normal Users](#for-normal-users)
+- [Internal Instructions](#internal-instructions)
+- [How To Run The App](#how-to-run-the-app)
 
-## For Instructors
+## Internal Instructions
 
 ### Step 1
 
@@ -166,7 +166,7 @@ Now, if you run your project once more using the same command as before, you wil
 
 [Open Stack Overflow](https://stackoverflow.com/questions/35876939/frameless-window-with-controls-in-electron-windows)
 
-## For Normal Users
+## How To Run The App
 
 ### You need [Node.js](https://nodejs.org/) to run this.
 
